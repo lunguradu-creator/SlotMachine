@@ -1,0 +1,58 @@
+﻿.slot-machine {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.reel {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.symbol {
+    position: absolute;
+    animation: spin 1s linear infinite;
+}
+
+.slot-column {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes spin {
+    0% {
+        top: -100px;
+    }
+
+    100% {
+        top: 100px;
+    }
+}
+
+.stopped .symbol {
+    animation: none;
+}

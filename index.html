@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot Machine</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-center">
+    <div class="container">
+        <h1 class="mt-5">Slot Machine</h1>
+        <div class="slot-machine">
+            <div class="row">
+                <div class="col reel" id="slot0_0"></div>
+                <div class="col reel" id="slot0_1"></div>
+                <div class="col reel" id="slot0_2"></div>
+                <div class="col reel" id="slot0_3"></div>
+                <div class="col reel" id="slot0_4"></div>
+            </div>
+            <div class="row">
+                <div class="col reel" id="slot1_0"></div>
+                <div class="col reel" id="slot1_1"></div>
+                <div class="col reel" id="slot1_2"></div>
+                <div class="col reel" id="slot1_3"></div>
+                <div class="col reel" id="slot1_4"></div>
+            </div>
+            <div class="row">
+                <div class="col reel" id="slot2_0"></div>
+                <div class="col reel" id="slot2_1"></div>
+                <div class="col reel" id="slot2_2"></div>
+                <div class="col reel" id="slot2_3"></div>
+                <div class="col reel" id="slot2_4"></div>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="btn btn-primary" onclick="spin()">Spin</button>
+            <button class="btn btn-secondary" onclick="increaseBet()">Increase Bet</button>
+            <button class="btn btn-secondary" onclick="decreaseBet()">Decrease Bet</button>
+            <div class="mt-3">Current Bet: <span id="current-bet">100</span></div>
+            <div>Credits: <span id="credits">5000</span></div>
+            <div>Last Win: <span id="last-win">0</span></div>
+            <div class="mt-3">
+                Win Rate:
+                <select id="win-rate" onchange="updateWinRate()">
+                    <option value="0.05">5%</option>
+                    <option value="0.1">10%</option>
+                    <option value="0.2">20%</option>
+                    <option value="0.4">40%</option>
+                    <option value="0.5">50%</option>
+                    <option value="0.6">60%</option>
+                    <option value="0.7">70%</option>
+                    <option value="0.8" selected>80%</option>
+                    <option value="0.9">90%</option>
+                </select>
+            </div>
+        </div>
+        <div id="message" class="text-info"></div>
+    </div>
+
+    <script src="gamelogic.js"></script>
+</body>
+</html>
