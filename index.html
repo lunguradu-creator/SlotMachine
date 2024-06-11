@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,29 +10,34 @@
     <div class="container">
         <h1 class="mt-5">Slot Machine</h1>
         <div class="slot-machine">
-            <div class="row">
-                <div class="col reel" id="slot0_0"></div>
-                <div class="col reel" id="slot0_1"></div>
-                <div class="col reel" id="slot0_2"></div>
-                <div class="col reel" id="slot0_3"></div>
-                <div class="col reel" id="slot0_4"></div>
+            <canvas id="winning-lines" width="550" height="330" style="position: absolute; z-index: 1;"></canvas>
+            <div id="slot0" class="slot-machine-column">
+                <div id="slot0_0" class="slot-symbol">🍒</div>
+                <div id="slot0_1" class="slot-symbol">🍋</div>
+                <div id="slot0_2" class="slot-symbol">🍊</div>
             </div>
-            <div class="row">
-                <div class="col reel" id="slot1_0"></div>
-                <div class="col reel" id="slot1_1"></div>
-                <div class="col reel" id="slot1_2"></div>
-                <div class="col reel" id="slot1_3"></div>
-                <div class="col reel" id="slot1_4"></div>
+            <div id="slot1" class="slot-machine-column">
+                <div id="slot1_0" class="slot-symbol">🍋</div>
+                <div id="slot1_1" class="slot-symbol">🍒</div>
+                <div id="slot1_2" class="slot-symbol">🍇</div>
             </div>
-            <div class="row">
-                <div class="col reel" id="slot2_0"></div>
-                <div class="col reel" id="slot2_1"></div>
-                <div class="col reel" id="slot2_2"></div>
-                <div class="col reel" id="slot2_3"></div>
-                <div class="col reel" id="slot2_4"></div>
+            <div id="slot2" class="slot-machine-column">
+                <div id="slot2_0" class="slot-symbol">🍊</div>
+                <div id="slot2_1" class="slot-symbol">🍉</div>
+                <div id="slot2_2" class="slot-symbol">🍒</div>
+            </div>
+            <div id="slot3" class="slot-machine-column">
+                <div id="slot3_0" class="slot-symbol">🍉</div>
+                <div id="slot3_1" class="slot-symbol">7</div>
+                <div id="slot3_2" class="slot-symbol">🍋</div>
+            </div>
+            <div id="slot4" class="slot-machine-column">
+                <div id="slot4_0" class="slot-symbol">🍇</div>
+                <div id="slot4_1" class="slot-symbol">🍊</div>
+                <div id="slot4_2" class="slot-symbol">🍒</div>
             </div>
         </div>
-        <div class="controls">
+        <div class="controls mt-4">
             <button class="btn btn-primary" onclick="spin()">Spin</button>
             <button class="btn btn-secondary" onclick="increaseBet()">Increase Bet</button>
             <button class="btn btn-secondary" onclick="decreaseBet()">Decrease Bet</button>
@@ -54,7 +59,7 @@
                 </select>
             </div>
         </div>
-        <div id="message" class="text-info"></div>
+        <div id="message" class="text-info mt-3"></div>
     </div>
 
     <script src="gamelogic.js"></script>
