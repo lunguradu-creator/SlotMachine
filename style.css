@@ -1,36 +1,33 @@
-﻿.slot-machine {
+.slot-machine {
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     margin: 20px 0;
 }
 
-.reel {
-    width: 100px;
+.slot-machine-column {
+    display: flex;
+    flex-direction: column;
+    width: 100px; /* Ajustăm lățimea pentru a fi pătrată */
+    overflow: hidden;
+    text-align: center;
+    font-size: 2em;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+}
+
+.slot-symbol {
+    width: 100px; /* Ajustăm lățimea pentru a fi pătrată */
     height: 100px;
-    border: 2px solid #000;
+    line-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
-    margin: 5px;
-    overflow: hidden;
-    position: relative;
-}
-
-.symbol {
-    position: absolute;
-    animation: spin 1s linear infinite;
-}
-
-.slot-column {
-    display: inline-block;
-    width: 50px;
-    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
 .spin {
-    animation: spin 1s linear infinite;
+    animation: spin 0.3s infinite;
 }
 
 @keyframes spin {
@@ -39,20 +36,14 @@
     }
 
     100% {
-        transform: translateY(-100%);
+        transform: translateY(100px); /* Ajustat pentru a anima de sus în jos */
     }
 }
 
-@keyframes spin {
-    0% {
-        top: -100px;
-    }
-
-    100% {
-        top: 100px;
-    }
+.reel {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-.stopped .symbol {
-    animation: none;
-}
+
